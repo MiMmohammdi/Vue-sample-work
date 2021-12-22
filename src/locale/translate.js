@@ -10,6 +10,7 @@ export default {
       minTemporary: "Max Temporary",
       description: "Description",
       state: "State selection",
+      degree: "degree Celsius"
     },
     button: {
       creativeTim: "Creative Tim",
@@ -41,9 +42,10 @@ export default {
       minTemporary: "پایین ترین دما",
       description: "توضیحات",
       state: "شهر مورد نظر",
+      degree: "درجه سلسیوس"
     },
     button: {
-      creativeTim: "آقا میم",
+      creativeTim: "آقای میم",
       aboutUs: "درباره ما",
       blog: "بلاگ",
       licenses: " گواهی ",
