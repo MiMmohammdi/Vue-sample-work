@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 import VueI18n from "vue-i18n";
-import lang from "./local/translate";
+import lang from "./locale/translate";
 
 Vue.config.productionTip = false;
 

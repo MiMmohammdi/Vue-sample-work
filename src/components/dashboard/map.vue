@@ -54,19 +54,19 @@
               </tr>
               <tr>
                 <td>{{ $t("title.temporary") }}</td>
-                <td>{{ weatherData.temp }} c</td>
+                <td>{{ weatherData.temp }} {{ $t("title.degree") }}</td>
               </tr>
               <tr>
                 <td>{{ $t("title.feelsLike") }}</td>
-                <td>{{ weatherData.feelsLike }} c</td>
+                <td>{{ weatherData.feelsLike }} {{ $t("title.degree") }}</td>
               </tr>
               <tr>
                 <td>{{ $t("title.maxTemporary") }}</td>
-                <td>{{ weatherData.maxTemp }} c</td>
+                <td>{{ weatherData.maxTemp }} {{ $t("title.degree") }}</td>
               </tr>
               <tr>
                 <td>{{ $t("title.minTemporary") }}</td>
-                <td>{{ weatherData.minTemp }} c</td>
+                <td>{{ weatherData.minTemp }} {{ $t("title.degree") }}</td>
               </tr>
               <tr>
                 <td>{{ $t("title.description") }}</td>
@@ -81,11 +81,13 @@
           class="mx-auto"
           max-width="300"
           type="list-item-three-line"
-        ></v-skeleton-loader><v-skeleton-loader
+        ></v-skeleton-loader
+        ><v-skeleton-loader
           class="mx-auto"
           max-width="300"
           type="list-item-three-line"
-        ></v-skeleton-loader><v-skeleton-loader
+        ></v-skeleton-loader
+        ><v-skeleton-loader
           class="mx-auto"
           max-width="300"
           type="list-item-two-line"
