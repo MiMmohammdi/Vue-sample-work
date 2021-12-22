@@ -1,6 +1,8 @@
-<<<<<<< HEAD
 # Vue-sample-work
 This is an example work done with the vue framework.
+This site uses Vue, Vuetify, Axios, i18n.
+It is connected to the weather by an API and has the ability to display the weather forecast of different cities.
+Available in both English and Persian with a display according to that language.
 
 ## Project setup
 ```
@@ -24,6 +26,5 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
 
->>>>>>> 5fecb01d1bc42a1bc4b36f29be80830e028e26e6
+
