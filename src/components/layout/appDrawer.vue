@@ -1,19 +1,25 @@
 <template>
   <v-navigation-drawer
-    permanent
-    :expand-on-hover="!$vuetify.breakpoint.xs ? drawerState == false : ''"
-    over
-    bottom
-    :right="$vuetify.rtl ? 'right' : null"
+    disable-resize-watcher
+    disable-route-watcher
+    :permanent="!$vuetify.breakpoint.xs"
+    :expand-on-hover="!$vuetify.breakpoint.xs ? drawerState == false : null"
+    :right="$vuetify.rtl"
     fixed
     color="black"
+    :style="$vuetify.rtl ? 'transform: translateX(0%);' : ''"
     dark
-    :mini-variant-width="$vuetify.breakpoint.xs ? '0' : '70'"
+    :value="drawerState"
+    :absolute="$vuetify.breakpoint.xs"
+    :temporary="$vuetify.breakpoint.xs"
+    @input="changeDrawerState"
   >
     <v-list>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6 mt-5"> {{$t('title.appTitle')}} </v-list-item-title>
+          <v-list-item-title class="text-h6 mt-5">
+            {{ $t("title.appTitle") }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -51,7 +57,7 @@
         <v-icon>mdi-view-dashboard</v-icon>
       </v-list-item-icon>
       <v-list-item-content>
-        <v-list-item-title>{{$t('title.dashboard')}}</v-list-item-title>
+        <v-list-item-title>{{ $t("title.dashboard") }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
 
@@ -102,6 +108,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import store from "../../store/index";
 
 export default {
   data: () => ({
@@ -172,6 +179,13 @@ export default {
   }),
   computed: {
     ...mapGetters({ drawerState: "drawerState" }),
+  },
+  methods: {
+    changeDrawerState(state) {
+      if (!state) {
+        store.dispatch({ type: "drawerChange" });
+      }
+    },
   },
 };
 </script>
