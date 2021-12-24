@@ -63,7 +63,7 @@
               v-bind="attrs"
               v-on="on"
             >
-              <v-badge color="red" content="5" overlap bordered
+              <v-badge color="red" :content="notifications.length" overlap bordered
                 ><v-icon rounded="1">mdi-bell </v-icon></v-badge
               >
             </v-btn>
