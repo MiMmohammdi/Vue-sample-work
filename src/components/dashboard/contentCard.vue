@@ -7,7 +7,7 @@
         elevation="12"
         rounded
       >
-        <v-imgs
+        <v-img
           height="100%"
           width="100%"
           :src="imgAddress"

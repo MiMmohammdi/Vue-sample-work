@@ -3,6 +3,7 @@
     <Map />
     <v-col
       :class="$vuetify.breakpoint.xs ? 'd-flex flex-wrap' : 'd-flex'"
+      style="place-content: center"
       md="12"
     >
       <Chart
