@@ -34,7 +34,7 @@
       </v-col>
     </v-row>
     <v-divider class="ma-1"></v-divider>
-    <v-row no-gutters class="pa-2">
+    <v-row no-gutters class="px-2">
       <v-col
         ><v-icon v-text="tIcon"></v-icon> <span style="color: gray;" v-text="time"></span
       ></v-col>
