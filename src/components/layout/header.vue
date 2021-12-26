@@ -18,7 +18,7 @@
         >
       </v-btn>
       <v-toolbar-title v-if="!$vuetify.breakpoint.xs">{{
-        $t("title.dashboard")
+        $route.name
       }}</v-toolbar-title>
 
       <v-spacer></v-spacer>

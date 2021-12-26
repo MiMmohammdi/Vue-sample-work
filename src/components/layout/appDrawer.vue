@@ -56,7 +56,7 @@
       <v-list-item-icon>
         <v-icon>mdi-view-dashboard</v-icon>
       </v-list-item-icon>
-      <v-list-item-content>
+      <v-list-item-content @click="$router.push('/')">
         <v-list-item-title>{{ $t("title.dashboard") }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
@@ -87,6 +87,7 @@
 
           <v-list-item-title
             v-text="title"
+            @click="goToTitle(title)"
             class="text-style"
           ></v-list-item-title>
         </v-list-item>
@@ -189,6 +190,11 @@ export default {
       if (!state) {
         store.dispatch({ type: "drawerChange" });
       }
+    },
+    goToTitle(title) {
+      let address = title.replace(/\s+/g, "").toLowerCase();
+
+      this.$router.push({ path: address, params: { name: address } });
     },
   },
 };
