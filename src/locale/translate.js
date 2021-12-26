@@ -14,7 +14,7 @@ export default {
       manageListing: "Manage Listings",
     },
     button: {
-      creativeTim: "Creative Tim",
+      creativeTim: "Mr.MIM",
       aboutUs: "About Us",
       blog: "Blog",
       licenses: " Licenses ",
@@ -29,7 +29,7 @@ export default {
       searchAll: "Search",
       searchCity: "What state are you from?",
       made: "made with",
-      by: "by Creative Tim for a better web"
+      by: "by Mr MIM for a better web"
     },
   },
   fa: {

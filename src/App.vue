@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app color="black">
     <Drawer />
     <v-row
       no-gutters
@@ -17,7 +17,7 @@
             ? 'mr-md-2 pr-md-12 pt-md-12 pt-10 mx-1'
             : 'ml-md-2 pl-md-12 pt-md-12 pt-10 mx-1'
         "
-        style="background-color: whitesmoke"
+        :style="!$vuetify.theme.dark ? 'background-color: whitesmoke' : ''"
       >
         <v-container fluid>
           <router-view></router-view>
@@ -48,10 +48,13 @@ export default {
   computed: {
     ...mapGetters({ drawerState: "drawerState" }),
   },
-  mounted(){
-    store.dispatch({ type: "fetchData", city: "Tehran", lang: this.$i18n.locale});
+  mounted() {
+    store.dispatch({
+      type: "fetchData",
+      city: "Tehran",
+      lang: this.$i18n.locale,
+    });
   },
-  
 };
 </script>
 

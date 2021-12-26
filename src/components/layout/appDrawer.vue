@@ -6,7 +6,7 @@
     :expand-on-hover="!$vuetify.breakpoint.xs ? drawerState == false : null"
     :right="$vuetify.rtl"
     fixed
-    color="black"
+    :color="sidebarBackgrand"
     :style="$vuetify.rtl ? 'transform: translateX(0%);' : ''"
     dark
     :value="drawerState"
@@ -52,7 +52,7 @@
 
     <v-divider class="ma-2" style="background-color: grey"></v-divider>
 
-    <v-list-item style="background-color: #e91e63" dark link>
+    <v-list-item :style="'background-color: ' + sidebarColor" dark link>
       <v-list-item-icon>
         <v-icon>mdi-view-dashboard</v-icon>
       </v-list-item-icon>
@@ -178,7 +178,11 @@ export default {
     ],
   }),
   computed: {
-    ...mapGetters({ drawerState: "drawerState" }),
+    ...mapGetters({
+      drawerState: "drawerState",
+      sidebarColor: "sidebarColor",
+      sidebarBackgrand: "sidebarBackgrand",
+    }),
   },
   methods: {
     changeDrawerState(state) {

@@ -1,18 +1,13 @@
 <template>
   <v-hover v-slot="{ hover }">
-    <v-card elevation="8" width="300" height="380" class="px-5 mt-12 mx-2">
+    <v-card elevation="8" width="280" height="380" class="px-5 mt-12 mx-2">
       <v-sheet
         :class="hover ? 'mx-auto card-style' : 'v-sheet--offset mx-auto'"
         height="180"
         elevation="12"
         rounded
       >
-        <v-img
-          height="100%"
-          width="100%"
-          :src="imgAddress"
-        >
-        </v-img>
+        <v-img height="100%" width="100%" :src="imgAddress"> </v-img>
       </v-sheet>
       <v-row no-gutters justify="center" class="btn-card">
         <v-tooltip bottom>
@@ -41,7 +36,11 @@
       </v-row>
       <v-card-text class="pt-0">
         <div
-          style="text-align: center; color: black"
+          :style="
+            !$vuetify.theme.dark
+              ? 'text-align: center; color: black'
+              : 'text-align: center;'
+          "
           class="text-h6 font-weight-light mb-2"
         >
           {{ title }}
@@ -50,10 +49,10 @@
           style="text-align: center"
           class="subheading font-weight-light grey--text"
         >
-          <v-icon v-if="icon" small> mdi-{{ icon }} </v-icon>{{ subTitle }}
+          {{ subTitle }}
         </div>
         <v-divider class="my-2"></v-divider>
-        <v-row no-gutters justify="justify-space-between">
+        <v-row no-gutters>
           <v-icon class="mr-2" small> mdi-currency-usd </v-icon>
           <span class="text-caption grey--text font-weight-light">{{
             desc
@@ -61,9 +60,7 @@
           <v-spacer></v-spacer>
 
           <v-icon class="mr-2" small> mdi-map-marker </v-icon>
-          <span class="text-caption grey--text font-weight-light">{{
-            location
-          }}</span>
+          <span class="text-caption font-weight-light">{{ location }}</span>
         </v-row>
       </v-card-text>
     </v-card></v-hover
