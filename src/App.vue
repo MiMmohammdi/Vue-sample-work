@@ -1,5 +1,5 @@
 <template>
-  <v-app color="black">
+  <v-app>
     <Drawer />
     <v-row
       no-gutters
@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style >
 .sid-push-l {
   margin-left: 195px;
 }
