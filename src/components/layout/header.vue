@@ -7,7 +7,7 @@
     <v-row no-gutters class="mt-5" align="center" justify="end">
       <v-btn
         icon
-        style="background-color: white"
+        :style="!$vuetify.theme.dark ? 'background-color: white' : ''"
         class="ml-md-5 ma-2"
         @click="drawerStateChange"
       >
@@ -31,7 +31,10 @@
         ></v-text-field
       ></v-col>
       <v-col v-if="!$vuetify.breakpoint.xs" md="1" style="text-align: center">
-        <v-btn icon style="background-color: white">
+        <v-btn
+          icon
+          :style="!$vuetify.theme.dark ? 'background-color: white' : ''"
+        >
           <v-icon>mdi-magnify</v-icon>
         </v-btn></v-col
       >
@@ -63,7 +66,11 @@
               v-bind="attrs"
               v-on="on"
             >
-              <v-badge color="red" :content="notifications.length" overlap bordered
+              <v-badge
+                color="red"
+                :content="notifications.length"
+                overlap
+                bordered
                 ><v-icon rounded="1">mdi-bell </v-icon></v-badge
               >
             </v-btn>

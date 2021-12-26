@@ -9,6 +9,8 @@ export default new Vuex.Store({
     drawerState: false,
     isLoding: false,
     weatherData: {},
+    sidebarColor: "rgb(233, 30, 99)",
+    sidebarBackgrand: "unset",
   },
   mutations: {
     SET_DRAWER_STATE(state) {
@@ -19,6 +21,12 @@ export default new Vuex.Store({
     },
     SET_LOADING(state) {
       state.isLoding = !state.isLoding;
+    },
+    SET_SLIDEBAR_COLOR(state, payload) {
+      state.sidebarColor = payload;
+    },
+    SET_SLIDEBAR_BACKGRAND_COLOR(state, payload) {
+      state.sidebarBackgrand = payload;
     },
   },
   actions: {
@@ -55,6 +63,12 @@ export default new Vuex.Store({
           context.commit("SET_LOADING");
         });
     },
+    sidebar_color_change(context, payload) {
+      context.commit("SET_SLIDEBAR_COLOR", payload.color);
+    },
+    sidebar_backgrand_color_change(context, payload) {
+      context.commit("SET_SLIDEBAR_BACKGRAND_COLOR", payload.color);
+    },
   },
   getters: {
     drawerState: (state) => {
@@ -65,6 +79,12 @@ export default new Vuex.Store({
     },
     weatherData: (state) => {
       return state.weatherData;
+    },
+    sidebarColor: (state) => {
+      return state.sidebarColor;
+    },
+    sidebarBackgrand: (state) => {
+      return state.sidebarBackgrand;
     },
   },
 });

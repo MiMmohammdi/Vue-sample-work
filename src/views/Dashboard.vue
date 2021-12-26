@@ -1,5 +1,6 @@
 <template>
   <v-row no-gutters justify="center">
+    <FloatMenu v-if="!$vuetify.rtl" />
     <Map />
     <v-col
       :class="$vuetify.breakpoint.xs ? 'd-flex flex-wrap' : 'd-flex'"
@@ -7,7 +8,7 @@
       md="12"
     >
       <Chart
-        chartColor="#e91e63"
+        :chartColor="sidebarColor"
         title="Website Views"
         subTitle="Last Campaign Performance"
         desc="updated 10 minutes ago"
@@ -48,7 +49,7 @@ increase in today's sales"
         tIcon="mdi-ticket-outline"
         title="Website Visits"
         number="75.521"
-        pColor="pink"
+        :pColor="sidebarColor"
         class="col-md-5"
       />
       <Card
@@ -71,15 +72,17 @@ increase in today's sales"
       />
     </v-col>
 
-    <v-col cols="12" class="my-8 px-3">
-      <span style="font-size: x-large" class="mx-9">{{$t("title.manageListing")}}</span>
+    <v-col cols="12" class="my-8">
+      <span style="font-size: x-large" class="mx-3">{{
+        $t("title.manageListing")
+      }}</span>
     </v-col>
 
     <v-col
       :class="
         $vuetify.breakpoint.xs
           ? 'd-flex flex-wrap justify-center'
-          : 'd-flex flex-wrap justify-center'
+          : 'd-flex flex-no-wrap justify-center px-6'
       "
       md="12"
     >
@@ -91,6 +94,7 @@ increase in today's sales"
         desc="899/night"
         imgAddress="https://demos.creative-tim.com/vue-material-dashboard-pro/img/card-2.jpg"
         location="Barcelona, Spain"
+        class="col-4"
       />
       <ContentCard
         title="Office Studio"
@@ -100,6 +104,7 @@ increase in today's sales"
         desc="899/night"
         imgAddress="https://demos.creative-tim.com/vue-material-dashboard-pro/img/card-3.jpg"
         location="London, UK"
+        class="col-4"
       />
       <ContentCard
         title="Beautiful Castle"
@@ -109,6 +114,7 @@ increase in today's sales"
         desc="1.119/night"
         imgAddress="https://demos.creative-tim.com/vue-material-dashboard-pro/img/card-1.jpg"
         location=" Milan, Italy"
+        class="col-4"
       />
     </v-col>
   </v-row>
@@ -119,6 +125,9 @@ import Map from "../components/dashboard/map.vue";
 import Card from "../components/dashboard/card.vue";
 import Chart from "../components/dashboard/chart.vue";
 import ContentCard from "../components/dashboard/contentCard.vue";
+import FloatMenu from "../components/dashboard/floatMenu.vue";
+import { mapGetters } from 'vuex';
+
 
 export default {
   name: "Dashboard",
@@ -127,6 +136,12 @@ export default {
     Card,
     Chart,
     ContentCard,
+    FloatMenu
   },
+  computed: {
+    ...mapGetters({
+      sidebarColor: "sidebarColor"
+    })
+  }
 };
 </script>
