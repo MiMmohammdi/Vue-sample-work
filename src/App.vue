@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style >
+<style label="scss" scoped>
 .sid-push-l {
   margin-left: 195px;
 }
