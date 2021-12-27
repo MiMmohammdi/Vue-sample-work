@@ -122,6 +122,7 @@
               <v-switch
                 @change="drawerStateChange"
                 color="rgb(156, 39, 176)"
+                :value="drawerState"
               ></v-switch>
             </v-col>
           </v-row>
@@ -190,6 +191,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import store from "../../store/index";
 
 export default {
@@ -205,11 +207,16 @@ export default {
       "rgb(255, 82, 82)",
     ],
     backgroundColors: [
-      "rgba(0, 0, 0, 0.7)",
+      "rgb(42, 41, 41)",
       "rgb(228, 226, 226)",
-      "rgba(244, 67, 54, 0.8)",
+      "rgb(243, 84, 73)",
     ],
   }),
+  computed: {
+    ...mapGetters({
+      drawerState: "drawerState",
+    }),
+  },
   methods: {
     changeColor(color) {
       store.dispatch("sidebar_color_change", { color: color });

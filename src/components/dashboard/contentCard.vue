@@ -93,6 +93,7 @@ export default {
 
 .v-sheet--offset {
   top: -20px;
+  transition: top 0.5s;
   position: relative;
   z-index: 1;
 }

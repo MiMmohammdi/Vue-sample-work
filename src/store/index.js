@@ -10,7 +10,7 @@ export default new Vuex.Store({
     isLoding: false,
     weatherData: {},
     sidebarColor: "rgb(233, 30, 99)",
-    sidebarBackgrand: "unset",
+    sidebarBackgrand: "black",
   },
   mutations: {
     SET_DRAWER_STATE(state) {

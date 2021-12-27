@@ -1,6 +1,6 @@
 <template>
   <v-row no-gutters justify="center">
-    <FloatMenu v-if="!$vuetify.rtl" />
+  <FloatMenu v-if="!$vuetify.rtl" />
     <Map />
     <v-col
       :class="$vuetify.breakpoint.xs ? 'd-flex flex-wrap' : 'd-flex'"
